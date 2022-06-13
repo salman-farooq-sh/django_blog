@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    {% for post in blogpost_list %}
+        <a href="{% url 'main:post_detail' post.pk %}">
+            <div class="single-post">
+                <h3>{{ post.title|escape }}</h3>
+                {{ post.body|truncatewords:50|escape|linebreaks }}
+            </div>
+        </a>
+    {% endfor %}
+{% endblock content %}
