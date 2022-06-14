@@ -15,4 +15,6 @@ class PostDetailView(DetailView):
 
 class PostCreateView(CreateView):
     model = BlogPost
+    fields = ['title', 'author', 'publication_date', 'body']
     template_name = 'main/blogpost_create_form.html'
+
