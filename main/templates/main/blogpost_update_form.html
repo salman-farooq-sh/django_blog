@@ -2,10 +2,10 @@
 
 {% block content %}
     <div class="blogpost">
-        <h2>New Post</h2>
+        <h2>Edit Post</h2>
         <form action="" method="post">{% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Save">
+            <input type="submit" value="Update">
         </form>
     </div>
 {% endblock content %}

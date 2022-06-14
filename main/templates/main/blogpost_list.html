@@ -1,6 +1,12 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+    <a href="{% url 'main:post_create'%}">
+        <div class="blogpost">
+            <h3>Create New Post</h3>
+        </div>
+    </a>
+
     {% for post in blogpost_list %}
         <a href="{% url 'main:post_detail' post.pk %}">
             <div class="blogpost">
