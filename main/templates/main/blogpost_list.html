@@ -1,11 +1,13 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-    <a href="{% url 'main:post_create'%}">
-        <div class="item">
-            <h3>Create New Post</h3>
-        </div>
-    </a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'main:post_create'%}">
+            <div class="item">
+                <h3>Create New Post</h3>
+            </div>
+        </a>
+    {% endif %}
 
     {% for post in blogpost_list %}
         <a href="{% url 'main:post_detail' post.pk %}">

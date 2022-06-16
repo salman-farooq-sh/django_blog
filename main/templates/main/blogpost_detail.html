@@ -6,8 +6,13 @@
         <h3>By: {{ blogpost.author|escape }}</h3>
         <h3>Published: {{ blogpost.publication_date }}</h3>
         <div>{{ blogpost.body|escape|linebreaks }}</div>
+        <hr>
 
-        <a href="{% url 'main:post_update' blogpost.pk %}"><button>Edit Post</button></a>
-        <a href="{% url 'main:post_delete' blogpost.pk %}"><button>Delete Post</button></a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'main:post_update' blogpost.pk %}"><button>Edit Post</button></a>
+            <a href="{% url 'main:post_delete' blogpost.pk %}"><button>Delete Post</button></a>
+        {% else %}
+            To create, edit, and delete posts, please sign up and log in.
+        {% endif %}
     </div>
 {% endblock content %}
