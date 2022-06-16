@@ -8,7 +8,18 @@
 </head>
 <body>
 <header>
-    <h1><a href="{% url 'main:homepage' %}">My Blog</a></h1>
+    <div class="nav-left">
+        <h1><a href="{% url 'main:homepage' %}">My Blog</a></h1>
+    </div>
+    <div class="nav-right">
+        <h1>
+            {% if user.is_authenticated %}
+                Hi, {{ user.username }} (<a href="{% url 'logout' %}">log out</a>)
+            {% else %}
+                <a href="{% url 'login' %}">Log In</a>
+            {% endif %}
+        </h1>
+    </div>
 </header>
 <div>
     {% block content %}

@@ -9,6 +9,7 @@ header {
     background: burlywood;
     padding: 15px;
     margin: 15px;
+    display: flex;
 }
 
 a, a:visited {
@@ -16,8 +17,20 @@ a, a:visited {
     text-decoration: none;
 }
 
-.blogpost {
+.item {
     background: lightgray;
     margin: 15px;
     padding: 15px;
+}
+
+.nav-left {
+    margin-right: auto;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.nav-right h1 a {
+    text-decoration: black underline;
 }
