@@ -14,9 +14,9 @@
     <div class="nav-right">
         <h1>
             {% if user.is_authenticated %}
-                Hi, {{ user.username }} (<a href="{% url 'logout' %}">log out</a>)
+                Hi, {{ user.username }}! | <a href="{% url 'logout' %}">log out</a>
             {% else %}
-                <a href="{% url 'login' %}">Log In</a>
+                <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'accounts:signup' %}">Sign Up</a>
             {% endif %}
         </h1>
     </div>
